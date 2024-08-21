@@ -1,6 +1,5 @@
-"use client"
 
-import React, { MouseEventHandler } from 'react'
+import { MouseEventHandler } from 'react'
 interface StrokedButtonProps{
     title?:string,
     onClick:MouseEventHandler<HTMLButtonElement>,

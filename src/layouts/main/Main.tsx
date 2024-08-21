@@ -1,4 +1,4 @@
-import { MutableRefObject, Ref } from "react";
+import { MutableRefObject } from "react";
 import { pageList } from "../../pageList";
 
 function Main({ sectionRef }:{sectionRef:MutableRefObject<{ [key: string]: HTMLDivElement | null }>}) {

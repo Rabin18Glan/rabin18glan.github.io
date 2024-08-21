@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types';
 import FilledButton from '../../../components/Button/FilledButton';
 import StrokedButton from '../../../components/Button/StrokedButton';
+import { ProjectProps } from '../data/projectListData';
 
-const ProjectCard = ({taskCompleted, name, type, technologiesUsed, description, images, urlBtnLinks }) => {
+const ProjectCard = ({id,taskCompleted, name, type, technologiesUsed, description, images, urlBtnLinks }:ProjectProps) => {
   return (
-    <div className="max-w-md mx-auto bg-white dark:bg-gray-900 rounded-xl  overflow-hidden md:max-w-2xl shadow-lg  shadow-purple-900 dark:shadow-purple-700">
+    <div key={id} className="max-w-md mx-auto bg-white dark:bg-gray-900 rounded-xl  overflow-hidden md:max-w-2xl shadow-lg  shadow-purple-900 dark:shadow-purple-700">
       <div className="md:flex">
         <div className="md:flex-shrink-0">
           {images.map((image, index) => (

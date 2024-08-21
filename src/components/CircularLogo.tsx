@@ -10,7 +10,7 @@ interface CircularLogoProps{
   circle?:boolean
 }
 function CircularLogo({className,logo,size,circle=true}:CircularLogoProps) {
-    const isDark = useModeContext().mode === 'dark';
+
   return (
     <Avatar className={` rounded-full flex items-center justify-center  ${className}`} >
     <img className='h-full w-full object-cover'  src={logo} alt="" />

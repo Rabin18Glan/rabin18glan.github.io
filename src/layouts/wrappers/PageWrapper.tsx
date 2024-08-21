@@ -1,6 +1,6 @@
-import React, { ReactNode } from 'react'
-import AnimationWrapper from './AnimationWrapper'
+import { ReactNode } from 'react'
 import TitleUnderLined from '../../components/TitleUnderLined'
+import AnimationWrapper from './AnimationWrapper'
 
 interface PageWrapper {
   children?:ReactNode,

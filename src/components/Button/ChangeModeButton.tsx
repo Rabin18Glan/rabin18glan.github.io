@@ -1,9 +1,5 @@
-"use client";
-
 import { Brightness2Outlined, Brightness7Rounded } from '@mui/icons-material';
-import { Fab } from '@mui/material';
-import React, { useState } from 'react'
-import useModeContext from '../../context/useModeContextProvider';
+import { useState } from 'react';
 
 function ChangeModeButton() {
 const [isDark,setIsDark]=useState(false)

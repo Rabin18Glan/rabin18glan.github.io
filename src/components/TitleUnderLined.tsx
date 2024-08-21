@@ -1,7 +1,5 @@
-import React from 'react'
-import Title from './Title'
-import { Box } from '@mui/material'
-import useModeContext from '../context/useModeContextProvider'
+import useModeContext from '../context/useModeContextProvider';
+import Title from './Title';
 
 function TitleUnderLined({title}:{title:string}) {
 
