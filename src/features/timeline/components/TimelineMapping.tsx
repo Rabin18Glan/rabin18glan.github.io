@@ -38,7 +38,7 @@ function TimelineMapping() {
                             {/* </AnimationWrapper> */}
                         </TimelineSeparator>
                         {/* <AnimationWrapper animationClass={(index % 2 == 0) ? ' animate-slide-in-right' : 'animate-slide-in-left'} > */}
-                            <TimelineContent sx={{ py: '12px', px: 2 }}>
+                            <TimelineContent sx={{ py: '12px',  }}>
                                 <Typography variant="h6" component="span">
                                     {data.title}
                                 </Typography>

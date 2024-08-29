@@ -15,7 +15,7 @@ function Root() {
     }
     
   return (
-    <div className='w-full'>
+    <div>
      <Header onScrollTo={handleScrollTo}/>
       <Main sectionRef={sectionsRefs}/>
       <Footer onScrollTo={handleScrollTo}/>
