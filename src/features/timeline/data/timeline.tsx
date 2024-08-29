@@ -9,7 +9,7 @@ export const timeline = [
       taskDone: 'Started to learn C and C++ programming',
       timelineDot: <TimelineDot variant='outlined' color='secondary'>
 
-        <CircularLogo size='30px' circle={false} logo='react.png' />
+        <CircularLogo size='30px'  logo='react.png' />
 
       </TimelineDot>
     },
@@ -50,7 +50,7 @@ export const timeline = [
       title: 'Started Laravel Development',
       taskDone: 'Learn backend concepts and databases',
       timelineDot: <TimelineDot variant='outlined'>
-        <CircularLogo size='30px' circle={false} logo='laravel.png' />
+        <CircularLogo size='30px'  logo='laravel.png' />
       </TimelineDot>
     },
   ]

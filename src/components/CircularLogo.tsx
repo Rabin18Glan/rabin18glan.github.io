@@ -1,18 +1,15 @@
 import { Avatar } from '@mui/material';
-import useModeContext from '../context/useModeContextProvider';
 
 
 interface CircularLogoProps{
   className?:string,
   logo:string,
   size?:string,
- 
-  circle?:boolean
 }
-function CircularLogo({className,logo,size,circle=true}:CircularLogoProps) {
+function CircularLogo({className,logo,size}:CircularLogoProps) {
 
   return (
-    <Avatar className={` rounded-full flex items-center justify-center  ${className}`} >
+    <Avatar sizes={size}  className={` rounded-full flex items-center justify-center  ${className}`} >
     <img className='h-full w-full object-cover'  src={logo} alt="" />
     </Avatar>
   )

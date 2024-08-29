@@ -1,8 +1,7 @@
-"use client";
 
+import { useMediaQuery } from "@mui/material";
 import { useContext, useEffect } from "react";
 import { ModeContext } from "./ModeContextProvider";
-import { useMediaQuery } from "@mui/material";
 
 export default function useModeContext(){
     const {mode,setMode}=useContext(ModeContext);

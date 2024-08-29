@@ -1,7 +1,6 @@
-"use client";
 
-import React, { createContext, useState } from "react";
 import { PaletteMode, useMediaQuery } from "@mui/material";
+import React, { createContext, useState } from "react";
 
 type ModeContextType = {
   mode: PaletteMode;
