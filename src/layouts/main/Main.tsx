@@ -1,15 +1,16 @@
-import { MutableRefObject } from "react";
+import useScrollToContext from "../../context/useScrollToContext";
 import { pageList } from "../../pageList";
 
-function Main({ sectionRef }:{sectionRef:MutableRefObject<{ [key: string]: HTMLDivElement | null }>}) {
+function Main() {
 
+  const {sectionsRefs} = useScrollToContext();
   return (
 
     pageList.map((page) => (
 
       <div
         key={page.id}
-        ref={(el) => { sectionRef.current[page.page] = el; }}
+        ref={(el) => { sectionsRefs!.current[page.page] = el; }}
         id={page.page}
         className='bg-white dark:bg-black '
       >

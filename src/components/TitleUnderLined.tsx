@@ -1,12 +1,15 @@
-import useModeContext from '../context/useModeContextProvider';
 import Title from './Title';
 
-function TitleUnderLined({title}:{title:string}) {
+function TitleUnderLined({ title }: { title: string }) {
 
-    const isDark = useModeContext().mode === 'dark';
   return (
     <div className=''><Title title={title} />
-   <div className='flex'><div className={`w-8 h-2 dark:bg-purple-700 bg-purple-950`}></div><div className={`w-8 h-2 border ${isDark?'border-purple-200':'border-purple-950'}  bg-transparent`}></div></div></div>
+    <div className='flex'>
+        <div className={`w-8 h-2 dark:bg-purple-700 bg-purple-950`}>
+          </div>
+        <div className={`w-8 h-2 border dark:border-purple-700 border-purple-950  bg-transparent`}>
+          </div></div>
+    </div>
   )
 }
 

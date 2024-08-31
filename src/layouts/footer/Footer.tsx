@@ -1,17 +1,12 @@
 
 
 import { Typography } from '@mui/material';
+import useScrollToContext from '../../context/useScrollToContext';
 
-export default function Footer({onScrollTo}:{onScrollTo:Function}) {
+export default function Footer() {
     
-    
+    const {handleScrollTo} = useScrollToContext();
 
-    function handleScrollTo(page:string)
-    {
-        return function(){
-            onScrollTo(page);
-        }
-    }
     return (
         <div className="border-y bg-white dark:bg-black w-full">
             <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">

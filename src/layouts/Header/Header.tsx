@@ -6,10 +6,11 @@ import React, { useState } from 'react';
 import ChangeModeButton from '../../components/Button/ChangeModeButton';
 import Title from '../../components/Title';
 import { pageList } from '../../pageList';
+import useScrollToContext from '../../context/useScrollToContext';
 
-function Header({ onScrollTo }:{onScrollTo:Function}) {
+function Header() {
 
-
+const {handleScrollTo} = useScrollToContext();
 
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
@@ -22,11 +23,6 @@ function Header({ onScrollTo }:{onScrollTo:Function}) {
     setAnchorEl(null);
   };
 
-  function handleScrollTo(page:string) {
-    return function () {
-      onScrollTo(page)
-    }
-  }
 
 
   return (
