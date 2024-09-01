@@ -9,9 +9,9 @@ interface CircularLogoProps{
 function CircularLogo({className,logo,size}:CircularLogoProps) {
 
   return (
-    <Avatar sizes={size}  className={` rounded-full flex items-center justify-center  ${className}`} >
-    <img className='h-full w-full object-cover'  src={logo} alt="" />
-    </Avatar>
+    <div className={` rounded-full flex items-center justify-center h-24 w-24 p-3 ${className}`} >
+    <img className=' object-cover'  src={logo} alt="" />
+    </div>
   )
 }
 

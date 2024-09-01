@@ -1,14 +1,34 @@
-import { AnimationWrapper } from '../../../layouts/wrappers'
+import React from 'react';
+import emailjs from 'emailjs-com';
+import { AnimationWrapper } from '../../../layouts/wrappers';
 
 function ContactForm() {
+    const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+
+        emailjs.sendForm(
+            'service_1x5xq2b',    // Replace with your Service ID
+            'template_ng01mvi',   // Replace with your Template ID
+            e.currentTarget,      // Form element
+            'wqqPcyn1hdatXvxlb'        // Replace with your User ID (or Public Key)
+        )
+        .then((result) => {
+            console.log('Email sent successfully:', result.text);
+            alert('Message sent successfully!');
+        }, (error) => {
+            console.log('Failed to send email:', error.text);
+            alert('Failed to send message.');
+        });
+
+        e.currentTarget.reset();  // Optionally reset the form after submission
+    };
+
     return (
-        <form className=" flex flex-col justify-center" >
-            <AnimationWrapper className='flex flex-col' animationClass=' animate-slide-in-right opacity-100' >
-                <label htmlFor="name" className="hidden">
-                    Full Name
-                </label>
+        <form className="flex flex-col justify-center" onSubmit={sendEmail}>
+            <AnimationWrapper className='flex flex-col' animationClass=' animate-slide-in-right opacity-100'>
+                <label htmlFor="name" className="hidden">Full Name</label>
                 <input
-                    type="name"
+                    type="text"
                     name="name"
                     id="name"
                     placeholder="Full Name"
@@ -16,41 +36,35 @@ function ContactForm() {
                 />
             </AnimationWrapper>
 
-            <AnimationWrapper className='flex flex-col mt-2 ' animationClass='animate-slide-in-right opacity-100' >
-                <label htmlFor="email" className="hidden">
-                    Email
-                </label>
+            <AnimationWrapper className='flex flex-col mt-2' animationClass='animate-slide-in-right opacity-100'>
+                <label htmlFor="email" className="hidden">Email</label>
                 <input
                     type="email"
                     name="email"
                     id="email"
                     placeholder="Email"
-                    className={`w-100 mt-2 py-3 px-3 rounded-xl bg-gray-100 dark:bg-gray-900 text-gray-100 border border-gray-400  focus:bg-white dark:focus:bg-gray-950  font-semibold focus:border-purple-500 focus:outline-none`}
+                    className={`w-100 mt-2 py-3 px-3 rounded-xl bg-gray-100 dark:bg-gray-900 text-gray-100 border border-gray-400 focus:bg-white dark:focus:bg-gray-950 font-semibold focus:border-purple-500 focus:outline-none`}
                 />
             </AnimationWrapper>
 
             <AnimationWrapper className='flex flex-col mt-2' animationClass='animate-slide-in-right opacity-100'>
-                <label htmlFor="tel" className="hidden">
-                    Number
-                </label>
+                <label htmlFor="tel" className="hidden">Number</label>
                 <input
                     type="tel"
                     name="tel"
                     id="tel"
                     placeholder="Telephone Number"
-                    className={`w-100 mt-2 py-3 px-3 rounded-xl  bg-gray-100 dark:bg-gray-900 text-gray-100 border border-gray-400  focus:bg-white dark:focus:bg-gray-950  font-semibold focus:border-purple-500 focus:outline-none`}
+                    className={`w-100 mt-2 py-3 px-3 rounded-xl bg-gray-100 dark:bg-gray-900 text-gray-100 border border-gray-400 focus:bg-white dark:focus:bg-gray-950 font-semibold focus:border-purple-500 focus:outline-none`}
                 />
             </AnimationWrapper>
-            <AnimationWrapper className='flex flex-col mt-2' animationClass='animate-slide-in-right opacity-100' >
-                <label htmlFor="mes" className="hidden">
-                    Message
-                </label>
-                <textarea
 
+            <AnimationWrapper className='flex flex-col mt-2' animationClass='animate-slide-in-right opacity-100'>
+                <label htmlFor="mes" className="hidden">Message</label>
+                <textarea
                     name="mes"
                     id="mes"
                     placeholder="Message"
-                    className={`w-100 mt-2 py-3 px-3 rounded-xl  bg-gray-100 dark:bg-gray-900 text-gray-100 border border-gray-400  focus:bg-white dark:focus:bg-gray-950  font-semibold focus:border-purple-500 focus:outline-none`}
+                    className={`w-100 mt-2 py-3 px-3 rounded-xl bg-gray-100 dark:bg-gray-900 text-gray-100 border border-gray-400 focus:bg-white dark:focus:bg-gray-950 font-semibold focus:border-purple-500 focus:outline-none`}
                 />
             </AnimationWrapper>
 
@@ -63,7 +77,7 @@ function ContactForm() {
                 </button>
             </AnimationWrapper>
         </form>
-    )
+    );
 }
 
-export default ContactForm
+export default ContactForm;

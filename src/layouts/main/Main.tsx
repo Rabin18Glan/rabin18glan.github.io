@@ -14,7 +14,8 @@ function Main() {
         id={page.page}
         className='bg-white dark:bg-black '
       >
-        {page.pageSection}
+
+{page.pageSection}
       </div>
 
     ))

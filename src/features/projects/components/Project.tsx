@@ -3,18 +3,22 @@ import FilledButton from '../../../components/Button/FilledButton';
 import StrokedButton from '../../../components/Button/StrokedButton';
 import { ProjectProps } from '../data/projectListData';
 
-const ProjectCard = ({id,taskCompleted, name, type, technologiesUsed, description, images, urlBtnLinks }:ProjectProps) => {
+const ProjectCard = ({id,taskCompleted,projectType, name, type, technologiesUsed, description, images, urlBtnLinks }:ProjectProps) => {
   return (
-    <div key={id} className="max-w-md mx-auto bg-white dark:bg-gray-900 rounded-xl  overflow-hidden md:max-w-2xl shadow-lg  shadow-purple-900 dark:shadow-purple-700">
-      <div className="md:flex">
-        <div className="md:flex-shrink-0">
+    <div key={id} className=" bg-white dark:bg-gray-900 rounded-xl  overflow-hidden  shadow-lg  shadow-purple-900 dark:shadow-purple-700">
+      
+        <div className=" transition duration-500 ease-in-out transform hover:scale-110">
           {images.map((image, index) => (
-            <img  className="h-48 w-96 object-cover md:h-full md:w-48" src={image} alt={`${name} screenshot ${index + 1}`} key={index} />
+            <img  className="h-full  w-full object-cover " src={image} alt={`${name} screenshot ${index + 1}`} key={index} />
           ))}
         </div>
         <div className="p-8">
-          {name && <h2 className="block mt-1 text-xl leading-tight font-bold  text-gray-800 dark:text-gray-200">{name}</h2>}
+<div className='flex items-center justify-between'>
+{name && <h2 className="block mt-1 text-xl leading-tight font-bold  text-gray-800 dark:text-gray-200">{name}</h2>}
+{projectType &&  <p className="mt-2 text-yellow-500 font-semibold dark:text-green-300 animate-pulse">{projectType} Project</p>}
+</div>
           {type && <p className="mt-2 text-gray-600 dark:text-gray-300">{type}</p>}
+
           {technologiesUsed && (
             <ul className="mt-2 text-gray-500 flex flex-wrap">
               {technologiesUsed.map((tech, index) => (
@@ -37,7 +41,7 @@ const ProjectCard = ({id,taskCompleted, name, type, technologiesUsed, descriptio
     <StrokedButton title={urlBtnLinks[1].name} onClick={()=>{}}/></div>
     </div>
         </div>
-      </div>
+     
     </div>
   );
 };
