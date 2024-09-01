@@ -12,7 +12,7 @@ function ServiceCard({ title, skills }: ServiceDataProps) {
       <div className='flex flex-wrap gap-2 justify-center'>
 
         {skills.map((logo, index) => {
-          return <CircularLogo  key={index} logo={logo} className='p-1 h-64 border-2 border-purple-900 dark:border-purple-700' />
+          return <CircularLogo  key={index} logo={logo} className=' border-2 border-purple-900 dark:border-purple-700' />
 
 
         })}
