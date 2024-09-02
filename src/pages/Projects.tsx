@@ -5,6 +5,7 @@ function Projects() {
   return (
     <PageWrapper id='projects' title={'Projects'} >
       <ProjectList />
+
     </PageWrapper>
   )
 }

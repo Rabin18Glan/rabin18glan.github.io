@@ -26,7 +26,7 @@ const {handleScrollTo} = useScrollToContext();
 
 
   return (
-    <div className='flex justify-between items-center px-5 md:px-10 py-2 bg-white dark:bg-black w-full shadow-lg dark:shadow-gray-800 shadow-gray-300 z-50'>
+    <div className='flex justify-between items-center px-5 md:px-10 py-2 bg-white dark:bg-black  shadow-lg dark:shadow-gray-800 shadow-gray-300 z-50'>
       {/* routing  */}
       <div className="cursor-pointer">
         <a onClick={handleScrollTo('home')}><Title fontSize='30px' title='RG' /></a>

@@ -24,7 +24,7 @@ function ContactForm() {
     };
 
     return (
-        <form className="flex flex-col justify-center" onSubmit={sendEmail}>
+        <form className="flex flex-col justify-center max-w-80" onSubmit={sendEmail}>
             <AnimationWrapper className='flex flex-col' animationClass=' animate-slide-in-right opacity-100'>
                 <label htmlFor="name" className="hidden">Full Name</label>
                 <input

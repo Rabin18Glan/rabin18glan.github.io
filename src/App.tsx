@@ -3,7 +3,8 @@ import { Footer, Header, Main } from './layouts';
 
 function Root() { 
   return (
-    <div>
+    <div >
+
      <Header />
       <Main />
       <Footer/>

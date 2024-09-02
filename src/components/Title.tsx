@@ -44,17 +44,7 @@ function Title({title,fontSize='50px'}:FontStyleOptions) {
 
 export default Title
 
-// function UnStroked({data}:{data:string}) {
-//     return (
-//       <h1 style={{
-//         color: 'blue', // Text color
-//         WebkitTextStrokeWidth: '1px', // Stroke width
-//         WebkitTextStrokeColor: 'black' // Stroke color
-//       }}>
-//        {data}
-//       </h1>
-//     );
-//   }
+
 
 function Stroked({title,fontSize}:FontStyleOptions) {
   
@@ -70,9 +60,8 @@ function Stroked({title,fontSize}:FontStyleOptions) {
     );
   }
 
- // Check if the string has at least two characters
     function separateLetters(str:string) {
-        // Check if the string has at least two characters
+   
         if (str.length < 2) {
             return [str, '', '']; // Return original string and two empty strings
         }

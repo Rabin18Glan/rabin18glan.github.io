@@ -3,7 +3,7 @@
 interface CircularLogoProps{
   className?:string,
   logo:string,
-  size?:string,
+ 
 }
 function CircularLogo({className,logo}:CircularLogoProps) {
 

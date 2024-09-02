@@ -5,7 +5,7 @@ import ProjectCard from './Project'
 function ProjectList() {
   return (
   
-    <div className='flex flex-col gap-20 px-10'>
+    <div className='flex flex-col gap-20 '>
 
   
       {ProjectListData.map((project:ProjectProps)=>{

@@ -13,7 +13,7 @@ function ProfileInfo() {
                 <Title title='Glan' />
             </AnimationWrapper>
             <AnimationWrapper animationClass=' animate-slide-in-up opacity-100'>
-                <p className="py-6 font-cursive font-bold p-10 dark:text-gray-200 text-gray-700">
+                <p className="py-6 font-cursive font-bold  dark:text-gray-200 text-gray-700">
                     "Join me on this digital odyssey, where creativity meets functionality, and every project is a testament to my commitment to excellence. Let's build something extraordinary together!"
                 </p>
                <Buttons />

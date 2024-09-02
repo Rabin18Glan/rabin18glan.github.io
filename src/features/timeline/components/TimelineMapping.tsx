@@ -14,41 +14,38 @@ function TimelineMapping() {
     return (
         <>
             <AnimationWrapper className='font-bold' animationClass='animate-slide-in-down opacity-100' >Start</AnimationWrapper>
-            <Timeline position="alternate" className='w-full h-auto'>
+            <Timeline position="alternate" className='  w-full h-auto'>
                 {timeline.map((data, index) => {
                     return <TimelineItem key={index} >
-                        {/* <AnimationWrapper animationClass='animate-slide-in-up'> */}
                             <TimelineOppositeContent
-                                sx={{ m: 'auto 0' }}
+                                sx={{
+                                     my:2
+                                 }}
+                                 
                                 align="right"
                                 variant="body2">
                                 {data.date}
                             </TimelineOppositeContent>
-                        {/* </AnimationWrapper> */}
                         <TimelineSeparator>
-                            {/* <AnimationWrapper animationClass='animate-slide-in-down'> */}
-                                <TimelineConnector />
-                            {/* </AnimationWrapper> */}
-                            {/* <AnimationWrapper animationClass='ease-in-out'> */}
-                                {data.timelineDot}
-                            {/* </AnimationWrapper> */}
 
-                            {/* <AnimationWrapper animationClass='animate-slide-in-down'> */}
-                                <TimelineConnector />
-                            {/* </AnimationWrapper> */}
+                                {/* <TimelineConnector /> */}
+                          
+                                {data.timelineDot}
+                                  <TimelineConnector />
+                         
                         </TimelineSeparator>
-                        {/* <AnimationWrapper animationClass={(index % 2 == 0) ? ' animate-slide-in-right' : 'animate-slide-in-left'} > */}
-                            <TimelineContent sx={{ py: '12px',  }}>
+                            <TimelineContent sx={{ 
+                              my:10
+                             }}>
                                 <Typography variant="h6" component="span">
                                     {data.title}
                                 </Typography>
                                 <Typography>{data.taskDone}</Typography>
                             </TimelineContent>
-                        {/* </AnimationWrapper> */}
                     </TimelineItem>
                 })}
             </Timeline>
-
+            <AnimationWrapper className='font-bold' animationClass='animate-slide-in-down opacity-100' >To be continued ...</AnimationWrapper>
         </>
     )
 }

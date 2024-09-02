@@ -2,7 +2,7 @@ import { AnimationWrapper } from '../../../layouts/wrappers'
 
 function ContactInfo() {
     return (
-        <AnimationWrapper className={`p-6 px-10 bg-gray-200 dark:bg-gray-950 rounded-xl`} animationClass='ease-in-out opacity-100'>
+        <AnimationWrapper className={`p-6 px-10 max-w-50 bg-gray-200 dark:bg-gray-950 rounded-xl`} animationClass='ease-in-out opacity-100'>
             <h1 className={`text-3xl sm:text-4xl   font-extrabold tracking-tight`}>
                 Get in touch:
             </h1>

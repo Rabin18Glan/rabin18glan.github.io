@@ -10,7 +10,7 @@ interface PageWrapper {
 }
 function PageWrapper({ children, id, title, className = '' }:PageWrapper) {
   return (
-    <div id={id} className={`md:px-10 xl:px-64  flex py-40 flex-col justify-center items-center gap-10   dark:text-gray-200 text-gray-700 ${className}`}>
+    <div id={id} className={`md:px-10 xl:px-64 flex py-40 px-6 flex-col justify-center items-center gap-10   dark:text-gray-200 text-gray-700 ${className}`}>
       <AnimationWrapper animationClass="animate-slide-in-down opacity-100">
         <TitleUnderLined title={title} />
       </AnimationWrapper>

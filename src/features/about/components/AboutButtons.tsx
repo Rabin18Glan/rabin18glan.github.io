@@ -11,7 +11,7 @@ function AboutButtons() {
     <AnimationWrapper animationClass="animate-slide-in-up opacity-100">
     <div className="flex gap-5 font-semibold">
       <FilledButton onClick={handleScrollTo('projects')} title="See Projects" />
-      <StrokedButton onClick={download('/ser.png')} title="Download CV" />
+      <StrokedButton onClick={download('/MyCV.pdf')} title="Download CV" />
     </div>
   </AnimationWrapper>
   )

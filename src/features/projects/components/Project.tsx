@@ -12,7 +12,7 @@ const ProjectCard = ({id,taskCompleted,projectType, name, type, technologiesUsed
             <img  className="h-full  w-full object-cover " src={image} alt={`${name} screenshot ${index + 1}`} key={index} />
           ))}
         </div>
-        <div className="p-8">
+        <div className="p-5 md:p-8">
 <div className='flex items-center justify-between'>
 {name && <h2 className="block mt-1 text-xl leading-tight font-bold  text-gray-800 dark:text-gray-200">{name}</h2>}
 {projectType &&  <p className="mt-2 text-yellow-500 font-semibold dark:text-green-300 animate-pulse">{projectType} Project</p>}
@@ -34,7 +34,7 @@ const ProjectCard = ({id,taskCompleted,projectType, name, type, technologiesUsed
           <ul className=' list-disc font-cursive text-gray-700 dark:text-gray-200'>
             {taskCompleted.map((task,index)=>
             {
-              return <li key={index} className='font-cursive'>{task}</li>
+              return <li key={index} className='mx-5 font-cursive'>{task}</li>
             })}
           </ul>
           <div className="mt-4"><div className='flex gap-5'><FilledButton title={urlBtnLinks[0].name} onClick={()=>{}}></FilledButton>
