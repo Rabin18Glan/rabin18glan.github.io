@@ -37,8 +37,8 @@ const ProjectCard = ({id,taskCompleted,projectType, name, type, technologiesUsed
               return <li key={index} className='mx-5 font-cursive'>{task}</li>
             })}
           </ul>
-          <div className="mt-4"><div className='flex gap-5'><FilledButton title={urlBtnLinks[0].name} onClick={()=>{}}></FilledButton>
-    <StrokedButton title={urlBtnLinks[1].name} onClick={()=>{}}/></div>
+          <div className="mt-4"><div className='flex gap-5'><FilledButton title={urlBtnLinks[0].name} onClick={()=>window.location.href=urlBtnLinks[0].link}></FilledButton>
+    <StrokedButton title={urlBtnLinks[1].name} onClick={()=>window.location.href=urlBtnLinks[1].link}/></div>
     </div>
         </div>
      
