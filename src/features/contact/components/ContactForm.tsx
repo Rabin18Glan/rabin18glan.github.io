@@ -32,7 +32,7 @@ function ContactForm() {
                     name="name"
                     id="name"
                     placeholder="Full Name"
-                    className={`w-100 mt-2 py-3 px-3 rounded-xl font-semibold bg-gray-100 dark:bg-gray-900 text-gray-100 border border-gray-400 focus:border-purple-500 focus:bg-white dark:focus:bg-gray-950 focus:outline-none`}
+                    className={`w-100 mt-2 py-3 px-3 rounded-xl font-semibold bg-gray-100 dark:bg-gray-900 dark:text-gray-100 border border-gray-400 focus:border-purple-500 focus:bg-white dark:focus:bg-gray-950 focus:outline-none`}
                 />
             </AnimationWrapper>
 
@@ -43,7 +43,7 @@ function ContactForm() {
                     name="email"
                     id="email"
                     placeholder="Email"
-                    className={`w-100 mt-2 py-3 px-3 rounded-xl bg-gray-100 dark:bg-gray-900 text-gray-100 border border-gray-400 focus:bg-white dark:focus:bg-gray-950 font-semibold focus:border-purple-500 focus:outline-none`}
+                    className={`w-100 mt-2 py-3 px-3 rounded-xl bg-gray-100 dark:bg-gray-900 dark:text-gray-100 border border-gray-400 focus:bg-white dark:focus:bg-gray-950 font-semibold focus:border-purple-500 focus:outline-none`}
                 />
             </AnimationWrapper>
 
@@ -54,7 +54,7 @@ function ContactForm() {
                     name="tel"
                     id="tel"
                     placeholder="Telephone Number"
-                    className={`w-100 mt-2 py-3 px-3 rounded-xl bg-gray-100 dark:bg-gray-900 text-gray-100 border border-gray-400 focus:bg-white dark:focus:bg-gray-950 font-semibold focus:border-purple-500 focus:outline-none`}
+                    className={`w-100 mt-2 py-3 px-3 rounded-xl bg-gray-100 dark:bg-gray-900 dark:text-gray-100 border border-gray-400 focus:bg-white dark:focus:bg-gray-950 font-semibold focus:border-purple-500 focus:outline-none`}
                 />
             </AnimationWrapper>
 
@@ -64,14 +64,14 @@ function ContactForm() {
                     name="mes"
                     id="mes"
                     placeholder="Message"
-                    className={`w-100 mt-2 py-3 px-3 rounded-xl bg-gray-100 dark:bg-gray-900 text-gray-100 border border-gray-400 focus:bg-white dark:focus:bg-gray-950 font-semibold focus:border-purple-500 focus:outline-none`}
+                    className={`w-100 mt-2 py-3 px-3 rounded-xl bg-gray-100 dark:bg-gray-900 dark:text-gray-100 border border-gray-400 focus:bg-white dark:focus:bg-gray-950 font-semibold focus:border-purple-500 focus:outline-none`}
                 />
             </AnimationWrapper>
 
             <AnimationWrapper animationClass='animate-slide-in-up opacity-100'>
                 <button
                     type="submit"
-                    className='btn w-32 mt-5 self-center lg:self-start bg-purple-950 dark:bg-purple-700 text-gray-200'
+                    className='btn w-32 mt-5 self-center lg:self-start bg-purple-950 dark:bg-purple-700 dark:text-gray-200'
                 >
                     Submit
                 </button>
