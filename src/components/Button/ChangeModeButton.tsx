@@ -1,11 +1,12 @@
 import { Brightness2Outlined, Brightness7Rounded } from '@mui/icons-material';
 import { useState } from 'react';
+import { useColorMode } from '../../context/colorModeContext';
 
 function ChangeModeButton() {
-const [isDark,setIsDark]=useState(false)
+const {isDark,toggleColorMode} = useColorMode();
     const handleMode = ()=>{
       document.documentElement.classList.toggle('dark');
-      setIsDark(prev=>!prev)
+      toggleColorMode();
     }
   return (
     <button className='fixed right-10 p-2 rounded-full top-32 shadow-gray-700 dark:shadow-gray-500 shadow-lg dark:bg-black  dark:border-white bg-yellow-500 hover:bg-orange-500 hover:top-[126px] z-50'  onClick={handleMode} >

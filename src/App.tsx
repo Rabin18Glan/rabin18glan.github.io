@@ -1,14 +1,17 @@
 import { Footer, Header, Main } from './layouts';
+import { ColorModeProvider } from './context/colorModeContext'
 
 
 function Root() { 
   return (
-    <div >
+    <ColorModeProvider>
+      <div >
 
-     <Header />
-      <Main />
-      <Footer/>
-    </div>
+       <Header />
+        <Main />
+        <Footer/>
+      </div>
+    </ColorModeProvider>
   );
 }
 
