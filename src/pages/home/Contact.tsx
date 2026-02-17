@@ -1,5 +1,5 @@
-import { ContactContainer, ContactForm, ContactInfo } from '../features/contact';
-import { PageWrapper } from '../layouts/wrappers';
+import { ContactContainer, ContactForm, ContactInfo } from '../../features/contact';
+import { PageWrapper } from '../../layouts/wrappers';
 
 function Contacts() {
     return (

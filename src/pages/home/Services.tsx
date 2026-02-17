@@ -1,5 +1,5 @@
-import { ServiceList } from '../features/services';
-import { PageWrapper } from '../layouts/wrappers';
+import { ServiceList } from '../../features/services';
+import { PageWrapper } from '../../layouts/wrappers';
 
 function Services() {
   return (

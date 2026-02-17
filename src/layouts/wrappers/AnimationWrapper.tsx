@@ -1,6 +1,5 @@
-
 import { ReactNode } from 'react';
-import { useInView } from 'react-intersection-observer';
+import { motion } from 'framer-motion';
 
 interface AnimationWrapperProps{
   children?:ReactNode,
@@ -9,19 +8,36 @@ interface AnimationWrapperProps{
   duration?:string,
   threshold?:number
 }
-function AnimationWrapper({ children, className = '', animationClass = '', duration = '1000', threshold = 0.1 }:AnimationWrapperProps) {
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-    threshold,
-  });
+
+function AnimationWrapper({ children, className = '', animationClass = '', threshold = 0.1 }:AnimationWrapperProps) {
+  
+  let initial: any = { opacity: 0 };
+  let animate: any = { opacity: 1 };
+  
+  if (animationClass.includes('slide-in-right')) {
+     initial = { x: 100, opacity: 0 };
+     animate = { x: 0, opacity: 1 };
+  } else if (animationClass.includes('slide-in-left')) {
+     initial = { x: -100, opacity: 0 };
+     animate = { x: 0, opacity: 1 };
+  } else if (animationClass.includes('slide-in-up')) {
+     initial = { y: 100, opacity: 0 };
+     animate = { y: 0, opacity: 1 };
+  } else if (animationClass.includes('slide-in-down')) {
+     initial = { y: -100, opacity: 0 };
+     animate = { y: 0, opacity: 1 };
+  }
 
   return (
-    <div
-      ref={ref}
-      className={`opacity-0 transition-opacity duration-${duration} ${inView ? animationClass+' opacity-100' : ''} ${className}`}
+    <motion.div
+      initial={initial}
+      whileInView={animate}
+      viewport={{ once: true, amount: threshold }}
+      transition={{ duration: 0.8, type: "spring", bounce: 0.4 }}
+      className={className}
     >
       {children}
-    </div>
+    </motion.div>
   );
 }
 

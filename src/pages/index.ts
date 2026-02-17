@@ -1,9 +1,6 @@
-import About from "./About";
-import Hero from "./Hero";
-import Contacts from "./Contact";
-import MyTimeline from "./MyTimeline";
-import Projects from "./Projects";
-import Services from "./Services";
 
+import { About, Contact, Hero, MyTimeline, Projects, Services } from "./home";
+import PrivacyPolicy from "./PrivacyPolicy";
+import TermsOfUse from "./TermsOfUse";
 
-export {About, Contacts, Projects, Services,MyTimeline, Hero}
+export { About, Contact as Contacts, Projects, Services, MyTimeline, Hero, PrivacyPolicy, TermsOfUse }

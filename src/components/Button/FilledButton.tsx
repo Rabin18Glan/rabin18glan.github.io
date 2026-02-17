@@ -7,8 +7,7 @@ interface FilledButtonProps{
 
 }
 function FilledButton({title,onClick}:FilledButtonProps) {
-  return ( <button onClick={onClick} className="btn bg-purple-950 text-white dark:bg-purple-700 hover:shadow-lg hover:shadow-gray-600 border-none hover:bg-yellow-500 dark:hover:bg-yellow-600  ">{title}</button>
-  
+  return ( <button onClick={onClick} className="btn bg-primary-600 text-white hover:bg-primary-700 border-none transition-all duration-300 shadow-lg shadow-primary-600/20">{title}</button>
   )
 }
 
