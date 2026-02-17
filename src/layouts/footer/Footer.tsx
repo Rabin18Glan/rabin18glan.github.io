@@ -1,153 +1,133 @@
 
-
-import { Typography } from '@mui/material';
 import useScrollToContext from '../../context/useScrollToContext';
+import Title from '../../components/Title';
+import { motion } from 'framer-motion';
 
 export default function Footer() {
-    
-    const {handleScrollTo} = useScrollToContext();
+    const { handleScrollTo } = useScrollToContext();
 
     return (
-        <div className="border-y bg-white dark:bg-black w-full">
-            <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
-                <div className="md:flex md:justify-between">
-                    <div className="mb-6 md:mb-0">
-                        <h2 className='text-2xl font-bold text-gray-700 dark:text-gray-200'>RG</h2>
+        <footer className="border-t border-gray-100 dark:border-dark-border bg-white dark:bg-dark-bg w-full pt-20 pb-10 transition-colors duration-500">
+            <div className="mx-auto w-full max-w-7xl px-6 lg:px-12">
+                
+                {/* Upper Section: CTA & About */}
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-20">
+                    <div className="lg:col-span-5 space-y-6">
+                        <div className="cursor-pointer inline-block" onClick={(e: any) => handleScrollTo('home')(e)}>
+                            <Title title="RG" fontSize="3rem" />
+                        </div>
+                        <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed max-w-md font-medium">
+                            Crafting high-performance digital experiences with a focus on clean architecture, 
+                            scalability, and user-centric design. Let's build the future together.
+                        </p>
+                        <div className="flex gap-4 pt-4">
+                            <motion.a 
+                                whileHover={{ scale: 1.1 }}
+                                whileTap={{ scale: 0.9 }}
+                                href="mailto:robinjsl321@gmail.com" 
+                                className="w-12 h-12 rounded-2xl bg-primary-50 dark:bg-primary-900/20 text-primary-600 flex items-center justify-center hover:bg-primary-600 hover:text-white transition-all duration-300 shadow-sm"
+                            >
+                                <span className="material-icons">email</span>
+                            </motion.a>
+                            <motion.a 
+                                whileHover={{ scale: 1.1 }}
+                                whileTap={{ scale: 0.9 }}
+                                href="tel:+9779840469397" 
+                                className="w-12 h-12 rounded-2xl bg-primary-50 dark:bg-primary-900/20 text-primary-600 flex items-center justify-center hover:bg-primary-600 hover:text-white transition-all duration-300 shadow-sm"
+                            >
+                                <span className="material-icons">phone</span>
+                            </motion.a>
+                        </div>
                     </div>
-                    <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
-                        <div>
-                            <Typography className="text-sm font-semibold uppercase" sx={{ my: '20px', fontWeight: 'bold' }}>Resources</Typography>
-                            <ul className="text-gray-500 font-medium">
-                                <li className="mb-4">
-                                    <a onClick={handleScrollTo('home')} className="hover:underline" role="button">
-                                        Home
-                                    </a>
-                                </li>
-                                <li>
-                                    <a onClick={handleScrollTo('about')} className="hover:underline" role="button">
-                                        About
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div>
-                            <Typography className="text-sm font-semibold uppercase" sx={{ my: '20px', fontWeight: 'bold' }}>Follow Me</Typography>
-                            <ul className="text-gray-500 font-medium">
-                                <li className="mb-4">
-                                    <a
-                                        href="https://www.linkedin.com/in/rabin-glan-95ba41303/"
-                                        className="hover:underline"
-                                        target="_blank"
-                                         rel="noopener"
-                                    >
-                                        LinkedIn
-                                    </a>
-                                </li>
-                                <li className="mb-4">
-                                    <a
-                                        href="https://github.com/Rabin18Glan"
-                                        className="hover:underline"
-                                        target="_blank"
-                                        rel="noopener"
-                                    >
-                                        GitHub
-                                    </a>
-                                </li>
-                                <li className="mb-4">
-                                    <a
-                                        href="https://www.facebook.com/profile.php?id=61551905339042"
-                                        className="hover:underline"
-                                    >
-                                        Facebook
-                                    </a>
-                                </li>
-                                <li className='mb-4'>
-                                    <a
-                                        href="https://www.instagram.com/rabin19glan/"
-                                        className="hover:underline"
-                                        target="_blank"
-                                        rel="noopener"
-                                        
-                                    >
-                                        Instagram
-                                    </a>
-                                </li>
-                                <li>
-                                    <a
-                                        href="https://www.upwork.com/freelancers/~01593d9f2913e8f562"
-                                        className="hover:underline"
-                                        target="_blank"
-                                        rel="noopener"
-                                    >
-                                        Upwork
-                                    </a>
-                                </li>
-                                
-                            </ul>
-                        </div>
-                        <div>
-                            <Typography className="text-sm font-semibold uppercase" sx={{ my: '20px', fontWeight: 'bold' }}>Legal</Typography>
-                            <ul className="text-gray-500 font-medium">
-                                <li className="mb-4">
-                                    <a onClick={handleScrollTo('privacy')} className="hover:underline" role="button">
-                                        Privacy Policy
-                                    </a>
-                                </li>
-                                <li>
-                                    <a onClick={handleScrollTo('terms')} className="hover:underline" role="button">
-                                        Terms &amp; Conditions
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
+
+                    <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-10">
+                        <FooterColumn title="Navigation">
+                            <FooterLink onClick={handleScrollTo('home')}>Home</FooterLink>
+                            <FooterLink onClick={handleScrollTo('about')}>About Me</FooterLink>
+                            <FooterLink onClick={handleScrollTo('projects')}>Portfolio</FooterLink>
+                            <FooterLink onClick={handleScrollTo('contact')}>Contact</FooterLink>
+                        </FooterColumn>
+                        
+                        <FooterColumn title="Connect">
+                            <ExternalLink href="https://www.linkedin.com/in/rabin-glan-95ba41303/">LinkedIn</ExternalLink>
+                            <ExternalLink href="https://github.com/Rabin18Glan">GitHub</ExternalLink>
+                            <ExternalLink href="https://www.upwork.com/freelancers/~01593d9f2913e8f562">Upwork</ExternalLink>
+                            <ExternalLink href="https://www.facebook.com/profile.php?id=61551905339042">Facebook</ExternalLink>
+                        </FooterColumn>
+ 
+                        <FooterColumn title="Information">
+                            <FooterLink onClick={handleScrollTo('privacy')}>Privacy Policy</FooterLink>
+                            <FooterLink onClick={handleScrollTo('terms')}>Terms of Use</FooterLink>
+                            <p className="text-[10px] uppercase font-black text-gray-400 tracking-widest pt-4">Based in</p>
+                            <p className="text-xs font-bold text-gray-500 dark:text-gray-300">Hetauda, Nepal</p>
+                        </FooterColumn>
                     </div>
                 </div>
-                <hr className="my-6 border-gray-200 sm:mx-auto lg:my-8" />
-                <div className="sm:flex sm:items-center sm:justify-between">
-                    <span className="text-sm text-gray-500 sm:text-center">
-                        © 2024
-                        <a href="https://hiteshchoudhary.com/" className="hover:underline">
-                            rabinglan
-                        </a>
-                        . All Rights Reserved.
-                    </span>
-                    <div className="flex mt-4 space-x-5 sm:justify-center sm:mt-0">
-                        <a href="https://www.facebook.com" className="text-gray-500 hover:text-gray-900" target="_blank" rel="noreferrer">
-                            <svg
-                                className="w-4 h-4"
-                                aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="currentColor"
-                                viewBox="0 0 8 19"
-                            >
-                                <path
-                                    fillRule="evenodd"
-                                    d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z"
-                                    clipRule="evenodd"
-                                />
-                            </svg>
-                            <span className="sr-only">Facebook page</span>
-                        </a>
-                    
-                        <a href="https://twitter.com" className="text-gray-500" target="_blank" rel="noreferrer">
-                            <svg
-                                className="w-4 h-4"
-                                aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="currentColor"
-                                viewBox="0 0 20 17"
-                            >
-                                <path
-                                    fillRule="evenodd"
-                                    d="M20 1.892a8.178 8.178 0 0 1-2.355.635 4.074 4.074 0 0 0 1.8-2.235 8.344 8.344 0 0 1-2.605.98A4.13 4.13 0 0 0 13.85 0a4.068 4.068 0 0 0-4.1 4.038 4 4 0 0 0 .105.919A11.705 11.705 0 0 1 1.4.734a4.006 4.006 0 0 0 1.268 5.392 4.165 4.165 0 0 1-1.859-.5v.05A4.057 4.057 0 0 0 4.1 9.635a4.19 4.19 0 0 1-1.856.07 4.108 4.108 0 0 0 3.831 2.807A8.36 8.36 0 0 1 0 14.184 11.732 11.732 0 0 0 6.291 16 11.502 11.502 0 0 0 17.964 4.5c0-.177 0-.35-.012-.523A8.143 8.143 0 0 0 20 1.892Z"
-                                    clipRule="evenodd"
-                                />
-                            </svg>
-                            <span className="sr-only">Twitter page</span>
-                        </a>
+
+                {/* Bottom Section: Copyright & Built With */}
+                <div className="pt-10 border-t border-gray-100 dark:border-gray-800 flex flex-col md:flex-row justify-between items-center gap-6">
+                    <div className="flex items-center gap-2">
+                         <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+                         <span className="text-xs font-bold text-gray-500 dark:text-gray-400 tracking-wide">
+                            AVAILABLE FOR NEW OPPORTUNITIES
+                         </span>
+                    </div>
+
+                    <p className="text-sm text-gray-500 dark:text-gray-400 font-medium text-center">
+                        © {new Date().getFullYear()} <span className="text-primary-600 font-bold">Rabin Glan</span>. 
+                        Handcrafted with React & Tailwind.
+                    </p>
+
+                    <div className="flex gap-6">
+                        <span className="text-[10px] font-black text-gray-300 dark:text-gray-600 uppercase tracking-[0.4em]">
+                            Ver v2.4.0
+                        </span>
                     </div>
                 </div>
             </div>
+        </footer>
+    );
+}
+ 
+function FooterColumn({ title, children }: { title: string, children: React.ReactNode }) {
+    return (
+        <div className="space-y-6">
+            <h4 className="text-xs font-black uppercase tracking-[0.3em] text-primary-600 mb-4">{title}</h4>
+            <ul className="text-gray-600 dark:text-gray-400 font-bold text-sm space-y-4">
+                {children}
+            </ul>
         </div>
+    );
+}
+ 
+interface LinkProps { onClick?: React.MouseEventHandler<HTMLButtonElement>, href?: string, children: React.ReactNode }
+ 
+function FooterLink({ onClick, children }: LinkProps) {
+    return (
+        <li>
+            <button 
+                onClick={onClick} 
+                className="hover:text-primary-600 transition-all duration-300 text-left relative group"
+            >
+                {children}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 transition-all duration-300 group-hover:w-full"></span>
+            </button>
+        </li>
+    );
+}
+ 
+function ExternalLink({ href, children }: LinkProps) {
+    return (
+        <li>
+            <a 
+                href={href} 
+                className="hover:text-primary-600 transition-all duration-300 relative group flex items-center gap-2" 
+                target="_blank" 
+                rel="noopener noreferrer"
+            >
+                {children}
+                <span className="material-icons text-[10px] opacity-0 group-hover:opacity-100 transition-opacity">north_east</span>
+            </a>
+        </li>
     );
 }

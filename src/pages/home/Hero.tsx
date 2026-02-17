@@ -1,5 +1,6 @@
-import { HeroContainer, ProfileImage, ProfileInfo } from "../features/hero";
-import Helmet from 'react-helmet';
+import { HeroContainer, ProfileImage, ProfileInfo } from "../../features/hero";
+import { Helmet } from 'react-helmet-async';
+
 function Hero() {
   return (
     <HeroContainer>

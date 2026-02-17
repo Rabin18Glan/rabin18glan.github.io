@@ -1,5 +1,5 @@
-import { AboutButtons, AboutMe } from '../features/about';
-import { PageWrapper } from '../layouts/wrappers';
+import { AboutButtons, AboutMe } from '../../features/about';
+import { PageWrapper } from '../../layouts/wrappers';
 
 function About() {
   return (

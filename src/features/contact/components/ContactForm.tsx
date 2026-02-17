@@ -1,16 +1,17 @@
+
+import { motion } from 'framer-motion';
 import React from 'react';
 import emailjs from 'emailjs-com';
-import { AnimationWrapper } from '../../../layouts/wrappers';
 
 function ContactForm() {
     const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
         emailjs.sendForm(
-            'service_1x5xq2b',    // Replace with your Service ID
-            'template_ng01mvi',   // Replace with your Template ID
-            e.currentTarget,      // Form element
-            'wqqPcyn1hdatXvxlb'        // Replace with your User ID (or Public Key)
+            import.meta.env.VITE_EMAILJS_SERVICE_ID,
+            import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+            e.currentTarget,
+            import.meta.env.VITE_EMAILJS_PUBLIC_KEY
         )
         .then((result) => {
             console.log('Email sent successfully:', result.text);
@@ -20,63 +21,62 @@ function ContactForm() {
             alert('Failed to send message.');
         });
 
-        e.currentTarget.reset();  // Optionally reset the form after submission
+        e.currentTarget.reset(); 
     };
 
     return (
-        <form className="flex flex-col justify-center max-w-80" onSubmit={sendEmail}>
-            <AnimationWrapper className='flex flex-col' animationClass=' animate-slide-in-right opacity-100'>
-                <label htmlFor="name" className="hidden">Full Name</label>
+        <motion.form 
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="flex flex-col gap-5 w-full max-w-lg mx-auto bg-white/5 backdrop-blur-md p-8 rounded-3xl shadow-xl border border-gray-100 dark:border-dark-border" 
+            onSubmit={sendEmail}
+        >
+            <motion.div initial={{ x: -20, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} transition={{ delay: 0.1 }}>
                 <input
                     type="text"
                     name="name"
-                    id="name"
-                    placeholder="Full Name"
-                    className={`w-100 mt-2 py-3 px-3 rounded-xl font-semibold bg-gray-100 dark:bg-gray-900 dark:text-gray-100 border border-gray-400 focus:border-purple-500 focus:bg-white dark:focus:bg-gray-950 focus:outline-none`}
+                    placeholder="Your Name"
+                    className="w-full py-4 px-6 rounded-2xl bg-gray-50 dark:bg-dark-card/50 border border-gray-200 dark:border-dark-border focus:border-primary-600 focus:ring-2 focus:ring-primary-600/20 outline-none transition-all dark:text-white"
                 />
-            </AnimationWrapper>
+            </motion.div>
 
-            <AnimationWrapper className='flex flex-col mt-2' animationClass='animate-slide-in-right opacity-100'>
-                <label htmlFor="email" className="hidden">Email</label>
+            <motion.div initial={{ x: -20, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} transition={{ delay: 0.2 }}>
                 <input
                     type="email"
                     name="email"
-                    id="email"
-                    placeholder="Email"
-                    className={`w-100 mt-2 py-3 px-3 rounded-xl bg-gray-100 dark:bg-gray-900 dark:text-gray-100 border border-gray-400 focus:bg-white dark:focus:bg-gray-950 font-semibold focus:border-purple-500 focus:outline-none`}
+                    placeholder="Your Email"
+                    className="w-full py-4 px-6 rounded-2xl bg-gray-50 dark:bg-dark-card/50 border border-gray-200 dark:border-dark-border focus:border-primary-600 focus:ring-2 focus:ring-primary-600/20 outline-none transition-all dark:text-white"
                 />
-            </AnimationWrapper>
+            </motion.div>
 
-            <AnimationWrapper className='flex flex-col mt-2' animationClass='animate-slide-in-right opacity-100'>
-                <label htmlFor="tel" className="hidden">Number</label>
+            <motion.div initial={{ x: -20, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} transition={{ delay: 0.3 }}>
                 <input
                     type="tel"
                     name="tel"
-                    id="tel"
-                    placeholder="Telephone Number"
-                    className={`w-100 mt-2 py-3 px-3 rounded-xl bg-gray-100 dark:bg-gray-900 dark:text-gray-100 border border-gray-400 focus:bg-white dark:focus:bg-gray-950 font-semibold focus:border-purple-500 focus:outline-none`}
+                    placeholder="Phone Number (Optional)"
+                    className="w-full py-4 px-6 rounded-2xl bg-gray-50 dark:bg-dark-card/50 border border-gray-200 dark:border-dark-border focus:border-primary-600 focus:ring-2 focus:ring-primary-600/20 outline-none transition-all dark:text-white"
                 />
-            </AnimationWrapper>
+            </motion.div>
 
-            <AnimationWrapper className='flex flex-col mt-2' animationClass='animate-slide-in-right opacity-100'>
-                <label htmlFor="mes" className="hidden">Message</label>
+            <motion.div initial={{ x: -20, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} transition={{ delay: 0.4 }}>
                 <textarea
                     name="mes"
-                    id="mes"
-                    placeholder="Message"
-                    className={`w-100 mt-2 py-3 px-3 rounded-xl bg-gray-100 dark:bg-gray-900 dark:text-gray-100 border border-gray-400 focus:bg-white dark:focus:bg-gray-950 font-semibold focus:border-purple-500 focus:outline-none`}
+                    placeholder="Write your message here..."
+                    rows={4}
+                    className="w-full py-4 px-6 rounded-2xl bg-gray-50 dark:bg-dark-card/50 border border-gray-200 dark:border-dark-border focus:border-primary-600 focus:ring-2 focus:ring-primary-600/20 outline-none transition-all dark:text-white resize-none"
                 />
-            </AnimationWrapper>
+            </motion.div>
 
-            <AnimationWrapper animationClass='animate-slide-in-up opacity-100'>
-                <button
-                    type="submit"
-                    className='btn w-32 mt-5 self-center lg:self-start bg-purple-950 dark:bg-purple-700 dark:text-gray-200'
-                >
-                    Submit
-                </button>
-            </AnimationWrapper>
-        </form>
+            <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                type="submit"
+                className="w-full py-4 rounded-2xl bg-primary-600 text-white font-bold text-lg shadow-lg shadow-primary-600/30 hover:bg-primary-700 transition-all duration-300"
+            >
+                Send Message
+            </motion.button>
+        </motion.form>
     );
 }
 

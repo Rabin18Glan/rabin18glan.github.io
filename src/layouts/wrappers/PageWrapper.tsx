@@ -1,21 +1,24 @@
 import { ReactNode } from 'react'
 import TitleUnderLined from '../../components/TitleUnderLined'
 import AnimationWrapper from './AnimationWrapper'
+import Section from './Section'
 
-interface PageWrapper {
-  children?:ReactNode,
-  id:string,
-  title:string,
-  className?:string
+interface PageWrapperProps {
+  children?: ReactNode,
+  id: string,
+  title: string,
+  className?: string,
+  contentWidth?: 'constrained' | 'full'
 }
-function PageWrapper({ children, id, title, className = '' }:PageWrapper) {
+
+function PageWrapper({ children, id, title, className = '', contentWidth = 'constrained' }: PageWrapperProps) {
   return (
-    <div id={id} className={`md:px-10 xl:px-64 flex py-40 px-6 flex-col justify-center items-center gap-10   dark:text-gray-200 text-gray-700 ${className}`}>
+    <Section id={id} className={className} contentWidth={contentWidth} containerClassName="flex flex-col items-center gap-16">
       <AnimationWrapper animationClass="animate-slide-in-down opacity-100">
         <TitleUnderLined title={title} />
       </AnimationWrapper>
       {children}
-    </div>
+    </Section>
   )
 }
 

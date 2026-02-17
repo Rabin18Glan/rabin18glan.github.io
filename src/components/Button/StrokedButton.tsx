@@ -7,7 +7,7 @@ interface StrokedButtonProps{
 }
 function StrokedButton({title,onClick}: StrokedButtonProps) {
   return (
-    <button onClick={onClick} className="btn bg-transparent border-2 border-purple-950 dark:border-purple-700 text-purple-950 dark:text-purple-700 hover:shadow-lg hover:shadow-gray-600 hover:bg-yellow-500 hover:border-yellow-500 dark:hover:border-yellow-600 hover:text-white dark:hover:text-white">{title}</button>
+    <button onClick={onClick} className="btn bg-transparent border-2 border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white hover:border-primary-600 transition-all duration-300 shadow-lg shadow-primary-600/10">{title}</button>
   )
 }
 
